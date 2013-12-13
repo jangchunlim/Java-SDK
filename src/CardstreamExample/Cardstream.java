@@ -66,13 +66,6 @@ public class Cardstream {
             throw new Exception("Merchant ID not set");
         }
 
-        //  Check the merchant password 
-        if (merchantPassword == null || merchantPassword.length() == 0) {
-            /**
-             * this should be uncommented for production code
-             */    
-            // throw new Exception("Merchant password not set");
-        }
 
         // Check the amount
         if (amount == 0) {
@@ -376,16 +369,16 @@ public class Cardstream {
         return this.resCol.get("responseMessage");
     }
 
-    public String getAuthCrossReference() {
-        return this.resCol.get("VPCrossReference");
+    public String getAuthxref() {
+        return this.resCol.get("xref");
     }
 
     public String getAuthOrderDescription() {
-        return this.resCol.get("VPOrderDesc");
+        return this.resCol.get("orderDesc");
     }
 
     public String getAuthUniqueIndentifier() {
-        return this.resCol.get("VPTransactionUnique");
+        return this.resCol.get("transactionUnique");
     }
 
 }
